@@ -38,8 +38,14 @@ Options:
 
 pass in options from the command line or Crontest.run(command, options)
 
-=--no-backup= =-n= =:backup => false= run with no backup file
-=-v= =:verbose => true= for verbose output 
+: --no-backup 
+: -n
+: :backup => false 
+no backup file
+
+: -v
+: verbose => true
+verbose output 
 
 * Caution
 
