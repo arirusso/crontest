@@ -5,8 +5,10 @@ class Crontest
   end
   
   def initialize(command, opts = {})
-    @command = command
     @do_backup = opts[:backup] || true
+    @verbose = opts[:verbose] || false
+
+    @command = command
   end
   
   def run
@@ -16,13 +18,13 @@ class Crontest
     crontab_on_enter = cron.current
     @backup = Cronfile.new("crontab-backup-#{Time.now.strftime('%Y%m%d%H%M%S')}", cron.current)
     
-    new_cron = @backup.contents + cron.as_cron(@command)
+    new_cron = @backup.contents + cron.cronify(@command)
     out("testing command #{new_cron}")
     cron.activate(new_cron) || crontab_on_enter.eql?(cron.current) or 
       quit_with_error("command not accepted by crontab")
     
-    wait_time = 60 - Time.now.strftime('%S').to_i
-    out("test will run in #{wait_time} seconds")
+    wait_time = 2 + (60 - Time.now.strftime('%S').to_i)
+    out("test will run in #{wait_time} seconds", true)
     sleep(wait_time)
     cron.activate(@backup.contents)
 
@@ -31,27 +33,24 @@ class Crontest
     end
     
     cleanup(@do_backup)
-    out('finished')
+    out('finished', true)
   end
   
   private
   
-  def out(text)
-    STDOUT.puts("crontest: #{text}")
+  def out(text, always_show = false)
+    STDOUT.puts("crontest: #{text}") if (@verbose || always_show)
   end
   
   def quit_with_error(error)
     cleanup(false)
-    STDERR.puts("crontest: #{error}")
-    out("exiting")
-    exit
+    raise error
   end
   
   def cleanup(delete_backup)
     delete_backup ?
       @backup.delete:
         out("saved backup file #{Dir.pwd}/#{@backup.path}")
-        
   end
   
   def pwd_writable?

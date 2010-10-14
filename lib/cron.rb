@@ -1,6 +1,6 @@
 class Cron
 
-  def as_cron(command)
+  def cronify(command)
     "echo '* * * * * #{command}' | crontab"
   end
   
