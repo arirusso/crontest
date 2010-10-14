@@ -5,7 +5,6 @@ Gem::Specification.new do |s|
   s.version = '0.0.1'
 
   s.authors = ["Ari Russo"]
-  s.date = Date.today
   s.description = "command line tool for testing cron tasks"
   s.summary = "Run this to execute a command in your current user's cron environment."
   s.email = ["ari.russo@gmail.com"]
