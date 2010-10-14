@@ -1,6 +1,6 @@
 module Crontest
   
-  VERSION = "0.0.4"
+  VERSION = "0.0.5"
   
   def self.run(command, opts = {})    
     Process.new(command, opts).run  
@@ -43,7 +43,7 @@ module Crontest
     private
 
     def cleanup(keep_backup)
-      keep_backup? 
+      keep_backup? ? 
         out("saved backup file #{Dir.pwd}/#{@backup.path}") :
 	  @backup.delete
     end

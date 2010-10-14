@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "crontest"
-  s.version = '0.0.4'
+  s.version = '0.0.5'
 
   s.authors = ["Ari Russo"]
   s.description = "ruby library/command line tool for testing cron jobs"
