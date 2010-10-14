@@ -6,9 +6,7 @@ end
 
 require 'clap'
 
-require 'lib/crontest'
-require 'lib/crontab_helper'
-require 'lib/crontab_file'
+%w{crontest crontab_file crontab_helper}.each { |f| require File.expand_path("lib/#{f}", File.dirname(__FILE__)) }
 
 opts = {}
 

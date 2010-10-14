@@ -13,7 +13,7 @@ Command line tool for testing cron jobs
 
 * Description
 
-Executing an (almost) immediate and transient cron job from the command line  
+Execute an (almost) immediate and transient cron job from the command line  
 
 * Installation
 
