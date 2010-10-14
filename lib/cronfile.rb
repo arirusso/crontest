@@ -9,11 +9,6 @@ class Cronfile
     File.open(@path, 'w') {|f| f.write(contents) }
   end
   
-  # adds crontask to the file's contents
-  def append(text)
-    @contents += text
-  end
-  
   # deletes the file
   def delete
     File.delete(@path)

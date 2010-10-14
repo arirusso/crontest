@@ -5,9 +5,9 @@ class Cron
   end
   
   def activate(text)
-    Crontest.out "testing command #{text}"
-    %x[#{text}]
-    system(text) # to get the result type    
+    command = text.chomp.eql?('') ? 'crontab -r' : text
+    %x[#{command}]
+    system(command) # to get the result type    
   end
   
   # get current crontab

@@ -21,8 +21,8 @@ run this to execute a command in your current user's cron environment.
 	
 ** Usage
 
-	: crontest "/usr/bin/env ruby -v > rubyv.txt" &
+	: crontest 'echo hello! > MY_CRON_TEST.txt' &
 	
-this command will run =/usr/bin/env ruby -v > rubyv.log= in your cron environment.  it can take up to a minute to run.
+this command will run =crontest 'echo hello! > MY_CRON_TEST.txt' &= in your cron environment.  it can take up to a minute to run.
 
 crontest will create a file called cron-backup-[timestamp] of your current cron configuration in the where directory you run it. adding the parameter =--no-backup= or =-n= will force it to run without creating that file
