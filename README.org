@@ -15,10 +15,6 @@ command line tool for testing cron tasks
 
 run this to execute a command in your current user's cron environment.   
 
-** Requirements
-	
-	- [[http://github.com/soveran/clap][clap]]
-
 ** Installation
 
 : sudo gem install crontest
