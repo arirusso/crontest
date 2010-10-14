@@ -13,6 +13,7 @@ opts = {}
 
 args = Clap.run ARGV,
    "--no-backup" => lambda { opts[:backup] = false }
+   "-n" => lambda { opts[:backup] = false }
   
 command = args.first or raise "no command specified"
  
