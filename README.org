@@ -2,18 +2,18 @@
 #+TITLE:     crontest
 #+AUTHOR:    Ari Russo
 #+DATE:      2010-10-13 Wed
-#+TEXT: Command line tool for testing cron tasks
-#+KEYWORDS: cron, crontest, cron-test, crontab, linux, unix, test, tasks 
+#+TEXT: Command line tool for testing cron jobs
+#+KEYWORDS: cron, crontest, cron-test, crontab, linux, unix, test, tasks, jobs 
 #+LANGUAGE:  en
 #+LINK_HOME: http://github.com/arirusso/crontest
 
 * Summary
 
-Command line tool for testing cron tasks
+Command line tool for testing cron jobs
 
 * Description
 
-Execute a command as though it is being run by the current user's crontab   
+Executing an (almost) immediate and transient cron job from the command line  
 
 * Installation
 
@@ -23,7 +23,7 @@ Execute a command as though it is being run by the current user's crontab
 
 	: crontest 'echo hello! > MY_CRON_TEST.txt' &
 	
-this command will run =crontest 'echo hello! > MY_CRON_TEST.txt' &= in the environment that cron jobs will run for the current user.  it can take up to a minute to run as crontab's timing resolution is one minute.
+this command will run ='echo hello! > MY_CRON_TEST.txt' &= in the environment that cron runs for the current user.  it can take up to a minute to run as cron's timing resolution is one minute.
 
 crontest will create a backup file of your current crontab (cron-backup-[timestamp]) in the directory where directory you run it. adding the parameter =--no-backup= or =-n= will force it to run without creating that file
 

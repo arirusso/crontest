@@ -5,9 +5,10 @@ rescue LoadError
 end  
 
 require 'clap'
-require 'lib/cron'
+
 require 'lib/crontest'
-require 'lib/cronfile'
+require 'lib/crontab_helper'
+require 'lib/crontab_file'
 
 opts = {}
 
