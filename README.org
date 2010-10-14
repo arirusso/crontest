@@ -21,13 +21,23 @@ Execute an (almost) immediate and transient cron job from the command line
 	
 * Usage
 
+to run crontest from the command line:
+
 	: ./crontest 'echo hello! > MY_CRON_TEST.txt' &
 	
-this command will run =echo hello! > MY_CRON_TEST.txt= in the environment that cron runs for the current user.  it can take up to a minute to run as cron's timing resolution is one minute.
+to use the gem
 
-crontest will create a backup file of your current crontab (cron-backup-[timestamp]) in the directory where directory you run it. adding the parameter =--no-backup= or =-n= will force it to run without creating that file
+	: require 'crontest'
+	: Crontest.run("echo hello! > MY_CRON_TEST.txt")
+	
+these will both run =echo hello! > MY_CRON_TEST.txt= as a cron job.  it can take up to a minute to run as cron's timing resolution is one minute.
 
-use =-v= for verbose output
+crontest will create a backup file of your current crontab (cron-backup-[timestamp]) in the directory where directory you run it. 
+
+Options:
+
+adding the parameter =--no-backup= or =-n= will force it to run without creating that file use =-v= for verbose output
+likewise passing in options :verbose = false, :backup => false from ruby
 
 * Caution
 
