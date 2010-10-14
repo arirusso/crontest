@@ -9,11 +9,11 @@
 
 ** Summary
 
-A tool for testing cron tasks
+command line tool for testing cron tasks
 
 ** Description
 
-Run this to execute a command in your current user's cron environment.   
+run this to execute a command in your current user's cron environment.   
 
 ** Requirements
 	
