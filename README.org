@@ -23,7 +23,7 @@ Execute an (almost) immediate and transient cron job from the command line
 
 	: crontest 'echo hello! > MY_CRON_TEST.txt' &
 	
-this command will run ='echo hello! > MY_CRON_TEST.txt' &= in the environment that cron runs for the current user.  it can take up to a minute to run as cron's timing resolution is one minute.
+this command will run =echo hello! > MY_CRON_TEST.txt= in the environment that cron runs for the current user.  it can take up to a minute to run as cron's timing resolution is one minute.
 
 crontest will create a backup file of your current crontab (cron-backup-[timestamp]) in the directory where directory you run it. adding the parameter =--no-backup= or =-n= will force it to run without creating that file
 

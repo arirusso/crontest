@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.version = '0.0.1'
 
   s.authors = ["Ari Russo"]
-  s.description = "command line tool for testing cron tasks"
-  s.summary = "Run this to execute a command in your current user's cron environment."
+  s.description = "Command line tool for testing cron jobs"
+  s.summary = "Execute an (almost) immediate and transient cron job from the command line"
   s.email = ["ari.russo@gmail.com"]
   s.files = Dir.glob("{lib}/**/*") + %w(crontest LICENSE README.org)
   s.homepage = %q{http://github.com/arirusso/crontest}
