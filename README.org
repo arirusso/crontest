@@ -36,8 +36,7 @@ crontest will create a backup file of your current crontab (cron-backup-[timesta
 
 Options:
 
-adding the parameter =--no-backup= or =-n= will force it to run without creating that file use =-v= for verbose output
-likewise passing in options :verbose = false, :backup => false from ruby
+adding the parameter =--no-backup= or =-n= will force it to run without creating that file use =-v= for verbose output (or passing in options :verbose = false, :backup => false to Crontest.run)
 
 * Caution
 
