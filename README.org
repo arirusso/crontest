@@ -29,6 +29,6 @@ crontest will create a backup file of your current crontab (cron-backup-[timesta
 
 use =-v= for verbose output
 
-* Disclaimer
+* Caution
 
-I highly encourage you to keep a backup of your crontab before trying this tool as it is brand new and relatively untested.  Thanks! 
+I highly encourage you to keep a separate backup of your crontab before trying this tool as it is brand new and relatively untested.
