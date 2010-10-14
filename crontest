@@ -5,5 +5,15 @@ rescue LoadError
 end  
 
 require 'clap'
+require 'lib/cron'
 require 'lib/crontest'
+require 'lib/cronfile'
 
+opts = {}
+
+args = Clap.run ARGV,
+   "--no-backup" => lambda { opts[:backup] = false }
+  
+command = args.first or raise "no command specified"
+ 
+Crontest.run(command, opts)

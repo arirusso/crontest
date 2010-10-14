@@ -21,12 +21,12 @@ Run this to execute a command in your current user's cron environment.
 
 ** Installation
 
-: sudo gem install cron-test
+: sudo gem install crontest
 	
 ** Usage
 
-	: crontest "/usr/bin/env ruby -v > rubyv.log" &
+	: crontest "/usr/bin/env ruby -v > rubyv.txt" &
 	
-in a few seconds, this command will run =/usr/bin/env ruby -v > rubyv.log= in your cron environment.
+this command will run =/usr/bin/env ruby -v > rubyv.log= in your cron environment.  it can take up to a minute to run.
 
-cron-test will create a file called cron-backup.[timestamp] of your current cron configuration in the directory you run it in.  it will fail with an error message if it can't create that file.  adding the parameter =--no-backup= will force it to run without creating that file
+crontest will create a file called cron-backup-[timestamp] of your current cron configuration in the where directory you run it. adding the parameter =--no-backup= will force it to run without creating that file
