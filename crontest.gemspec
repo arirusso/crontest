@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "crontest"
-  s.version = '0.0.1'
+  s.version = '0.0.2'
 
   s.authors = ["Ari Russo"]
   s.description = "Command line tool for testing cron jobs"
@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.email = ["ari.russo@gmail.com"]
   s.files = Dir.glob("{lib}/**/*") + %w(crontest LICENSE README.org)
   s.homepage = %q{http://github.com/arirusso/crontest}
-  s.rdoc_options = ["--main", "README.org"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.specification_version = 3
