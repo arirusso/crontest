@@ -11,41 +11,50 @@ class Crontest
   
   # the cron test process
   def run
-    raise "crontest: current directory must be writable" unless dir_writable?
+    raise "current directory must be writable" unless dir_writable?
     cron = Cron.new
-    enter_crontab = cron.current
+    crontab_on_enter = cron.current
     @backup = Cronfile.new("crontab-backup-#{Time.now.strftime('%Y%m%d%H%M%S')}", cron.current)
-    cron.activate(@backup.contents + @command) or error(false)
-    wait
+    cron.activate(@backup.contents + cron.as_cron(@command)) || crontab_on_enter.eql?(cron.current) or quit_with_error("command not accepted by crontab")
+    
+    wait_time = 60 - Time.now.strftime('%S').to_i
+    out "waiting #{wait_time} seconds"
+    sleep(wait_time)
+    
     cron.activate(@backup.contents)
-    exit_crontab = cron.current
-    unless enter_crontab.eql?(exit_crontab)
-      puts "crontest: ** there has been a problem, please check your crontab **"
-      @do_backup = true # if there's a problem, don't delete the backup
+
+    unless crontab_on_enter.eql?(cron.current)
+      p crontab_on_enter
+      p cron.current
+      quit_with_error("restored crontab doesn't match original")
     end
     cleanup(@do_backup)
-    puts 'crontest: finished'
+    out 'finished'
   end
   
   private
   
-  def error(delete_backup)
-    cleanup(delete_backup)
-    puts "crontest: exiting"
+  def self.out(text)
+    STDOUT.puts("crontext: #{text}")
+  end
+  
+  def out(text)
+    Crontest.out(text)
+  end
+  
+  def quit_with_error(error)
+    cleanup(false)
+    STDERR.puts "crontest: #{error}"
+    out "exiting"
     exit
   end
   
   def cleanup(delete_backup)
     unless delete_backup
-      puts "crontest: saved backup file #{Dir.pwd}/#{@backup.path}"
+      out "saved backup file #{Dir.pwd}/#{@backup.path}"
     else
       @backup.delete
     end
-  end
-  
-  # pause @offset seconds
-  def wait
-    sleep(60)
   end
   
   # is the current directory writable?

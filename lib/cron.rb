@@ -1,11 +1,13 @@
 class Cron
 
-  # activates the cronfile
+  def as_cron(command)
+    "echo '* * * * * #{command}' | crontab"
+  end
+  
   def activate(text)
-    puts "crontest: testing command #{text}"
-    command = "echo '* * * * * #{text} | crontab'"
-    %x[#{command}]
-    system(command) # to get the result type
+    Crontest.out "testing command #{text}"
+    %x[#{text}]
+    system(text) # to get the result type    
   end
   
   # get current crontab
