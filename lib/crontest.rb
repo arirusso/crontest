@@ -1,6 +1,6 @@
 module Crontest
   
-  VERSION = "0.0.5"
+  VERSION = "0.0.6"
   
   def self.run(command, opts = {})    
     Process.new(command, opts).run  
