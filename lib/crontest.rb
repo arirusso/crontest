@@ -43,7 +43,7 @@ module Crontest
     private
 
     def cleanup(keep_backup)
-      keep_backup? ? 
+      keep_backup ? 
         out("saved backup file #{Dir.pwd}/#{@backup.path}") :
 	  @backup.delete
     end
