@@ -2,14 +2,14 @@
 #+TITLE:     crontest
 #+AUTHOR:    Ari Russo
 #+DATE:      2010-10-13 Wed
-#+TEXT: Command line tool for testing cron jobs
+#+TEXT: ruby library/ command line tool for testing cron jobs
 #+KEYWORDS: cron, crontest, cron-test, crontab, linux, unix, test, tasks, jobs 
 #+LANGUAGE:  en
 #+LINK_HOME: http://github.com/arirusso/crontest
 
 * Summary
 
-Command line tool for testing cron jobs
+Ruby lib/command line tool for testing cron jobs
 
 * Description
 

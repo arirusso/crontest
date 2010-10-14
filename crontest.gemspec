@@ -5,10 +5,10 @@ Gem::Specification.new do |s|
   s.version = '0.0.3'
 
   s.authors = ["Ari Russo"]
-  s.description = "Command line tool for testing cron jobs"
-  s.summary = "Execute an (almost) immediate and transient cron job from the command line"
+  s.description = "ruby library/command line tool for testing cron jobs"
+  s.summary = "Execute an (almost) immediate and transient cron job"
   s.email = ["ari.russo@gmail.com"]
-  s.files = Dir.glob("{lib}/**/*") + %w(crontest LICENSE README.org)
+  s.files = Dir.glob("{lib}/**/*") + %w(crontest.rb crontest LICENSE README.org)
   s.homepage = %q{http://github.com/arirusso/crontest}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
