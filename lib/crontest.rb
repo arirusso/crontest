@@ -35,14 +35,18 @@ module Crontest
         quit_with_error("restored crontab doesn't match original")
       end
       
-      @do_backup ?
-        out("saved backup file #{Dir.pwd}/#{@backup.path}") :
-          @backup.delete
-          
+      cleanup(@do_backup)
+
       out('finished', true)
     end
     
     private
+
+    def cleanup(keep_backup)
+      keep_backup? 
+        out("saved backup file #{Dir.pwd}/#{@backup.path}") :
+	  @backup.delete
+    end
     
     def calc_wait_time
       2 + (60 - Time.now.strftime('%S').to_i)
@@ -53,7 +57,7 @@ module Crontest
     end
     
     def quit_with_error(error)
-      cleanup(false)
+      cleanup(true)
       raise error
     end
     

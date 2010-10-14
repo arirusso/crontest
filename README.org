@@ -36,7 +36,10 @@ crontest will create a backup file of your current crontab (cron-backup-[timesta
 
 Options:
 
-adding the parameter =--no-backup= or =-n= will force it to run without creating that file use =-v= for verbose output (or passing in options :verbose = false, :backup => false to Crontest.run)
+pass in options from the command line or Crontest.run(command, options)
+
+=--no-backup= =-n= =:backup => false= run with no backup file
+=-v= =:verbose => true= for verbose output 
 
 * Caution
 
