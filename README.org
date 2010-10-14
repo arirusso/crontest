@@ -9,11 +9,11 @@
 
 * Summary
 
-Ruby lib/command line tool for testing cron jobs
+Ruby libary and command line tool for testing cron jobs.
 
 * Description
 
-Execute an (almost) immediate and transient cron job from the command line
+Execute an (almost) immediate and transient cron job from the command line, using the same environment that is used to run your user's crontab.
 
 * Requires
 
@@ -44,7 +44,7 @@ pass in options from the command line or Crontest.run(command, options)
 no backup file
 
 : -v
-: verbose => true
+: :verbose => true
 verbose output 
 
 * Caution
