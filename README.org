@@ -13,15 +13,15 @@ Command line tool for testing cron jobs
 
 * Description
 
-Execute an (almost) immediate and transient cron job from the command line  
+Execute an (almost) immediate and transient cron job from the command line
 
-* Installation
+* Requires
 
-: sudo gem install crontest
+	- [[http://github.com/soveran/clap][clap]]  
 	
 * Usage
 
-	: crontest 'echo hello! > MY_CRON_TEST.txt' &
+	: ./crontest 'echo hello! > MY_CRON_TEST.txt' &
 	
 this command will run =echo hello! > MY_CRON_TEST.txt= in the environment that cron runs for the current user.  it can take up to a minute to run as cron's timing resolution is one minute.
 
