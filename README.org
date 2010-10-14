@@ -1,0 +1,32 @@
+#+COMMENT: -*- org -*-
+#+TITLE:     crontest
+#+AUTHOR:    Ari Russo
+#+DATE:      2010-10-13 Wed
+#+TEXT: A tool for testing cron tabs
+#+KEYWORDS: cron, linux, unix, test
+#+LANGUAGE:  en
+#+LINK_HOME: http://github.com/arirusso/crontest
+
+** Summary
+
+A tool for testing cron tasks
+
+** Description
+
+Run this to execute a command in your current user's cron environment.   
+
+** Requirements
+	
+	- [[http://github.com/soveran/clap][clap]]
+
+** Installation
+
+: sudo gem install cron-test
+	
+** Usage
+
+	: crontest "/usr/bin/env ruby -v > rubyv.log" &
+	
+in a few seconds, this command will run =/usr/bin/env ruby -v > rubyv.log= in your cron environment.
+
+cron-test will create a file called cron-backup.[timestamp] of your current cron configuration in the directory you run it in.  it will fail with an error message if it can't create that file.  adding the parameter =--no-backup= will force it to run without creating that file
