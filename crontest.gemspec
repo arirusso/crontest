@@ -8,10 +8,9 @@ Gem::Specification.new do |s|
   s.description = "command line tool for testing cron tasks"
   s.summary = "Run this to execute a command in your current user's cron environment."
   s.email = ["ari.russo@gmail.com"]
-  s.extra_rdoc_files = ["README.rdoc"]
-  s.files = Dir.glob("{lib}/**/*") + %w(README.rdoc)
+  s.files = Dir.glob("{lib}/**/*") + %w(crontest LICENSE README.org)
   s.homepage = %q{http://github.com/arirusso/crontest}
-  s.rdoc_options = ["--main", "README.rdoc"]
+  s.rdoc_options = ["--main", "README.org"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.specification_version = 3
