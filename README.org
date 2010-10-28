@@ -1,8 +1,8 @@
 #+COMMENT: -*- org -*-
 #+TITLE:     crontest
 #+AUTHOR:    Ari Russo
-#+DATE:      2010-10-13 Wed
-#+TEXT: ruby library/ command line tool for testing cron jobs
+#+DATE:      2010-10-28 Wed
+#+TEXT: ruby command line tool/library for testing cron jobs
 #+KEYWORDS: cron, crontest, cron-test, crontab, linux, unix, test, tasks, jobs 
 #+LANGUAGE:  en
 #+LINK_HOME: http://github.com/arirusso/crontest
@@ -21,11 +21,13 @@ Execute an (almost) immediate and transient cron job from the command line, usin
 	
 * Usage
 
+	: gem install crontest
+
 to run crontest from the command line:
 
-	: ./crontest 'echo hello! > MY_CRON_TEST.txt' &
+	: crontest 'echo hello! > MY_CRON_TEST.txt' &
 	
-to use the gem
+or, to call from another ruby program
 
 	: require 'crontest'
 	: Crontest.run("echo hello! > MY_CRON_TEST.txt")
