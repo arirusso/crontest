@@ -38,7 +38,7 @@ module Crontest
         %x[echo \"#{text}\" >> #{tmpfile}]
         %x[crontab #{tmpfile}]
         result = system("crontab #{tmpfile}") # to get the result type - is there a better way to do this?
-        #%x[rm #{tmpfile}]
+        %x[rm #{tmpfile}]
         result
       end
     end
