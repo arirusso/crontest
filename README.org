@@ -13,7 +13,7 @@ Ruby libary and command line tool for testing cron jobs.
 
 * Description
 
-Execute an (almost) immediate and transient cron job from the command line, using the same environment that is used to run your user's crontab.
+Execute an (almost) immediate and transient cron job using the same environment that is used to run your user's crontab.
 
 * Requires
 
@@ -34,7 +34,7 @@ or, to call from another ruby program
 	
 these will both run =echo hello! > MY_CRON_TEST.txt= as a cron job.  it can take up to a minute to run as cron's timing resolution is one minute.
 
-crontest will create a backup file of your current crontab (cron-backup-[timestamp]) in the directory where directory you run it. 
+crontest will create a backup file of your current crontab (cron-backup-[timestamp]) in the directory where directory you run it, and then restore it. 
 
 Options:
 
