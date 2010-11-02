@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "crontest"
-  s.version = '0.0.11'
+  s.version = '0.1.0'
   s.default_executable = %q{crontest}
   s.executables = ["crontest"]
   
